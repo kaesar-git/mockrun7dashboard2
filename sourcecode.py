@@ -69,7 +69,11 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.title("Dashboard Countdown Activity Mock Run 7")
-st.markdown("<h4 style='margin-top:-15px; color:#000;'>BMTP MAESTRO</h4>", unsafe_allow_html=True)
+st.markdown("""
+    <div style='font-size:20px; font-weight:600; margin-top:-12px; margin-bottom:10px; color:#000;'>
+        BMTP MAESTRO
+    </div>
+""", unsafe_allow_html=True)
 
 jakarta_tz = pytz.timezone("Asia/Jakarta")
 now = datetime.now(jakarta_tz)
