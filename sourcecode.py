@@ -69,8 +69,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.title("Dashboard Countdown Activity Mock Run 7")
-st.markdown("""
-    <div style='font-size:20px; font-weight:600; margin-top:-12px; margin-bottom:10px; color:#000;'>
+st.title("""
+    <div style='font-size:30px; font-weight:600; margin-top:-12px; margin-bottom:10px; color:#000;'>
         BMTP MAESTRO
     </div>
 """, unsafe_allow_html=True)
