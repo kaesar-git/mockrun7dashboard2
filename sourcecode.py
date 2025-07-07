@@ -69,6 +69,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.title("Dashboard Countdown Activity Mock Run 7")
+st.markdown("<h4 style='margin-top:-15px; color:#000;'>BMTP MAESTRO</h4>", unsafe_allow_html=True)
 
 jakarta_tz = pytz.timezone("Asia/Jakarta")
 now = datetime.now(jakarta_tz)
@@ -200,3 +201,7 @@ with tabs[3]:
 
     st.markdown("</div>", unsafe_allow_html=True)
 
+st.markdown("""
+    <hr>
+    <p style='text-align: center; font-size: 12px; color: #444;'>COPYRIGHT KAESAR</p>
+""", unsafe_allow_html=True)
