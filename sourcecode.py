@@ -1,5 +1,3 @@
-# Dashboard Countdown Activity Mockrun 7 - Versi Fleksibel
-
 import streamlit as st
 from streamlit_autorefresh import st_autorefresh
 import pandas as pd
@@ -34,7 +32,7 @@ data = sheet.get_all_records()
 df = pd.DataFrame(data)
 
 # ========== KONFIGURASI HALAMAN ==========
-st.set_page_config(page_title="Dashboard Countdown Activity Mockrun 7", layout="wide")
+st.set_page_config(page_title="Dashboard Countdown Activity Mock Run 7", layout="wide")
 st_autorefresh(interval=15000, key="refresh")
 st.markdown("""
     <style>
@@ -70,7 +68,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.title("Dashboard Countdown Activity Mockrun 7")
+st.title("Dashboard Countdown Activity Mock Run 7")
 
 jakarta_tz = pytz.timezone("Asia/Jakarta")
 now = datetime.now(jakarta_tz)
@@ -110,12 +108,17 @@ def render_activity(row, big=False):
             expected_end = actual_start_dt + duration
 
             countdown = expected_end - now
+            total_seconds = countdown.total_seconds()
 
-            if is_delayed(row):
-                countdown_display = f"<div style='color:red; font-weight:bold; font-size:48px;'>-{str(abs(countdown)).split('.')[0]}</div>"
+            if total_seconds < 0:
+                hours, remainder = divmod(abs(int(total_seconds)), 3600)
+                minutes, seconds = divmod(remainder, 60)
+                countdown_display = f"<div style='color:red; font-weight:bold; font-size:48px;'>- {hours:02}:{minutes:02}:{seconds:02}</div>"
                 status = "<div style='color:red; font-weight:bold; font-size:32px;'>[Delay]</div>"
             else:
-                countdown_display = f"<div style='font-weight:bold; font-size:48px;'>{str(countdown).split('.')[0]}</div>"
+                hours, remainder = divmod(int(total_seconds), 3600)
+                minutes, seconds = divmod(remainder, 60)
+                countdown_display = f"<div style='font-weight:bold; font-size:48px;'>{hours:02}:{minutes:02}:{seconds:02}</div>"
                 status = "<div style='font-weight:bold; font-size:32px;'>[On Track]</div>"
 
         else:
