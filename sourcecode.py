@@ -18,8 +18,8 @@ scope = [
 ]
 
 # Ambil JSON string dari Streamlit secrets
-credentials = service_account.Credentials.from_service_account_file(
-    ".streamlit/dashboard-mockrun-7-b8680a9a4d00.json",
+credentials = service_account.Credentials.from_service_account_info(
+    st.secrets["gcp_service_account"],
     scopes=scope
 )
 
