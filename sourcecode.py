@@ -20,7 +20,7 @@ scope = [
 # Ambil JSON string dari Streamlit secrets
 credentials = service_account.Credentials.from_service_account_info(
     st.secrets["gcp_service_account"],
-    scopes=scope
+    scopes=["https://www.googleapis.com/auth/spreadsheets"]
 )
 
 
