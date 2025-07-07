@@ -69,9 +69,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.title("Dashboard Countdown Activity Mock Run 7")
-st.title("""
-    <div style='font-size:30px; font-weight:600; margin-top:-12px; margin-bottom:10px; color:#000;'>
-        BMTP MAESTRO
+st.markdown("""
+    <div style='font-size:20px; font-weight:600; margin-top:-12px; margin-bottom:10px; color:#000;'>
+        PROJECT MAESTRO
     </div>
 """, unsafe_allow_html=True)
 
@@ -206,6 +206,6 @@ with tabs[3]:
     st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("""
-    <hr>
-    <p style='text-align: center; font-size: 12px; color: #444;'>COPYRIGHT KAESAR</p>
+    <hr style='margin-top:40px;'>
+    <p style='text-align: center; font-size: 12px; color: #444;'>&copy;KAESAR</p>
 """, unsafe_allow_html=True)
