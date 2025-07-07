@@ -8,6 +8,7 @@ from google.oauth2 import service_account
 from datetime import datetime
 import json
 from io import StringIO
+import pytz
 
 # ========== KONFIGURASI GOOGLE SHEETS ==========
 
@@ -71,7 +72,8 @@ st.markdown("""
 
 st.title("Dashboard Countdown Activity Mockrun 7")
 
-now = datetime.now()
+jakarta_tz = pytz.timezone("Asia/Jakarta")
+now = datetime.now(jakarta_tz)
 
 # ========== PENGOLAHAN STATUS ==========
 def is_delayed(row):
@@ -79,9 +81,9 @@ def is_delayed(row):
         if row.get("Actual Start", "") == "":
             return False  # Belum mulai, tidak dihitung delay
 
-        plan_start = datetime.strptime(row["Plan Start"], "%d/%m/%Y %H:%M:%S")
-        plan_end = datetime.strptime(row["Plan End"], "%d/%m/%Y %H:%M:%S")
-        actual_start = datetime.strptime(row["Actual Start"], "%d/%m/%Y %H:%M:%S")
+        plan_start = jakarta_tz.localize(datetime.strptime(row["Plan Start"], "%d/%m/%Y %H:%M:%S"))
+        plan_end = jakarta_tz.localize(datetime.strptime(row["Plan End"], "%d/%m/%Y %H:%M:%S"))
+        actual_start = jakarta_tz.localize(datetime.strptime(row["Actual Start"], "%d/%m/%Y %H:%M:%S"))
         actual_end = row.get("Actual End", "")
 
         # Durasi seharusnya
@@ -97,13 +99,13 @@ def is_delayed(row):
 
 def render_activity(row, big=False):
     try:
-        plan_start = datetime.strptime(row["Plan Start"], "%d/%m/%Y %H:%M:%S")
-        plan_end = datetime.strptime(row["Plan End"], "%d/%m/%Y %H:%M:%S")
+        plan_start = jakarta_tz.localize(datetime.strptime(row["Plan Start"], "%d/%m/%Y %H:%M:%S"))
+        plan_end = jakarta_tz.localize(datetime.strptime(row["Plan End"], "%d/%m/%Y %H:%M:%S"))
         actual_start = row.get("Actual Start", "")
         activity_name = row.get("Activity", "")
 
         if actual_start:
-            actual_start_dt = datetime.strptime(actual_start, "%d/%m/%Y %H:%M:%S")
+            actual_start_dt = jakarta_tz.localize(datetime.strptime(actual_start, "%d/%m/%Y %H:%M:%S"))
             duration = plan_end - plan_start
             expected_end = actual_start_dt + duration
 
