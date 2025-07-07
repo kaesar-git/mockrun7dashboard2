@@ -35,7 +35,7 @@ df = pd.DataFrame(data)
 
 # ========== KONFIGURASI HALAMAN ==========
 st.set_page_config(page_title="Dashboard Countdown Activity Mockrun 7", layout="wide")
-st_autorefresh(interval=60000, key="refresh")
+st_autorefresh(interval=30000, key="refresh")
 st.markdown("""
     <style>
         .block-container { padding-top: 1rem; }
