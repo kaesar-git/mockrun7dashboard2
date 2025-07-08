@@ -94,8 +94,8 @@ def is_delayed(row):
         expected_end = actual_start + planned_duration
 
         # Jika actual end belum ada, dan sudah melewati waktu yang seharusnya selesai
-        return actual_end == "" and datetime.now() > expected_end
-
+        return actual_end == "" and now > expected_end
+        
     except Exception as e:
         print("Error in is_delayed:", e)
         return False
