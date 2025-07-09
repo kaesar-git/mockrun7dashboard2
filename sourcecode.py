@@ -104,6 +104,17 @@ def render_activity(row, big=False):
     try:
         plan_start = jakarta_tz.localize(datetime.strptime(row["Plan Start"], "%d/%m/%Y %H:%M:%S"))
         plan_end = jakarta_tz.localize(datetime.strptime(row["Plan End"], "%d/%m/%Y %H:%M:%S"))
+
+        # Validasi: plan_end tidak boleh lebih awal dari plan_start
+        if plan_end < plan_start:
+            return f"""
+                <div class='card'>
+                    <div class='title'>{row['Code']}</div>
+                    <div style='font-size:14px; color:red;'>Invalid Plan Time</div>
+                    <div style='font-size:12px;'>Plan End lebih awal dari Plan Start</div>
+                </div>
+            """
+
         actual_start = row.get("Actual Start", "")
         activity_name = row.get("Activity", "")
 
