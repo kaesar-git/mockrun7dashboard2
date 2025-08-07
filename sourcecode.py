@@ -218,8 +218,8 @@ with tabs[3]:
         }
 
         .stTabs [data-baseweb="tab"][aria-selected="true"] {
-            color: #053364 !important;  /* warna teks aktif */
-            border-bottom: 3px solid #053364 !important;  /* warna garis bawah aktif */
+            color: #E14434 !important;  /* warna teks aktif */
+            border-bottom: 3px solid #E14434 !important;  /* warna garis bawah aktif */
             font-weight: bold;
         }
     </style>
