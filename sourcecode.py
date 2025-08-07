@@ -206,17 +206,21 @@ with tabs[3]:
 
     # Tambahkan scroll horizontal
     st.markdown("""
-        <style>
-            .scroll-table { overflow-x: auto; }
-        </style>
-        <div class="scroll-table">
-    """, unsafe_allow_html=True)
+    <style>
+        /* Ganti warna merah default pada tab aktif */
+        .stTabs [data-baseweb="tab"] {
+            color: black;  /* warna teks tab */
+            font-weight: normal;
+        }
 
-    st.dataframe(df_display, use_container_width=True)
+        .stTabs [data-baseweb="tab"]:hover {
+            color: #333;
+        }
 
-    st.markdown("</div>", unsafe_allow_html=True)
-
-st.markdown("""
-    <hr style='margin-top:40px;'>
-    <p style='text-align: center; font-size: 12px; color: #444;'>&copy;KAESAR</p>
+        .stTabs [data-baseweb="tab"][aria-selected="true"] {
+            color: #113F67 !important;  /* warna teks aktif */
+            border-bottom: 3px solid #113F67 !important;  /* warna garis bawah aktif */
+            font-weight: bold;
+        }
+    </style>
 """, unsafe_allow_html=True)
