@@ -71,7 +71,7 @@ st.markdown("""
 st.title("Dashboard Countdown Activity Go-Live Maestro")
 st.markdown("""
     <div style='font-size:20px; font-weight:600; margin-top:-12px; margin-bottom:10px; color:#000;'>
-        PROJECT MAESTRO
+        15 - 17 August 2025
     </div>
 """, unsafe_allow_html=True)
 
