@@ -32,7 +32,7 @@ data = sheet.get_all_records()
 df = pd.DataFrame(data)
 
 # ========== KONFIGURASI HALAMAN ==========
-st.set_page_config(page_title="Dashboard Countdown Activity GO-Live Maestro", layout="wide")
+st.set_page_config(page_title="Dashboard Countdown Activity Go-Live Maestro", layout="wide")
 st_autorefresh(interval=15000, key="refresh")
 st.markdown("""
     <style>
@@ -68,7 +68,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.title("Dashboard Countdown Activity GO-Live Maestro")
+st.title("Dashboard Countdown Activity Go-Live Maestro")
 st.markdown("""
     <div style='font-size:20px; font-weight:600; margin-top:-12px; margin-bottom:10px; color:#000;'>
         PROJECT MAESTRO
