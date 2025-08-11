@@ -68,7 +68,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.title("Dashboard Countdown Activity Go-Live Maestro (Unnder Maintenance)")
+st.title("Dashboard Countdown Activity Go-Live Maestro (Under Maintenance)")
 st.markdown("""
     <div style='font-size:20px; font-weight:600; margin-top:-12px; margin-bottom:10px; color:#000;'>
         15 - 17 August 2025
