@@ -219,5 +219,5 @@ with tabs[3]:
 
 st.markdown("""
     <hr style='margin-top:40px;'>
-    <p style='text-align: center; font-size: 12px; color: #444;'>&copy;KAESAR | JUST DO IT | MAKE IT HAPPEN</p>
+    <p style='text-align: center; font-size: 12px; color: #444;'>&copy;KAESAR<br>JUST DO IT | MAKE IT HAPPEN</p>
 """, unsafe_allow_html=True)
