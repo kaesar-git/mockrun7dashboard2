@@ -71,7 +71,7 @@ st.markdown("""
 st.title("Dashboard Countdown Activity Go-Live Maestro")
 st.markdown("""
     <div style='font-size:20px; font-weight:600; margin-top:-12px; margin-bottom:10px; color:#000;'>
-        GRAHA MANTAP  |  15 - 17 August 2025  |  JUST DO IT  |  MAKE IT HAPPEN
+        15 - 17 August 2025
     </div>
 """, unsafe_allow_html=True)
 
@@ -219,5 +219,5 @@ with tabs[3]:
 
 st.markdown("""
     <hr style='margin-top:40px;'>
-    <p style='text-align: center; font-size: 12px; color: #444;'>&copy;KAESAR</p>
+    <p style='text-align: center; font-size: 12px; color: #444;'>&copy;KAESAR | JUST DO IT | MAKE IT HAPPEN</p>
 """, unsafe_allow_html=True)
